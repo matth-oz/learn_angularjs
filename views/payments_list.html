@@ -1,0 +1,17 @@
+<div class="frm-content">	
+	<table class="payer-data">
+		<tr>			
+			<th>Дата платежа</th>
+			<th>Плательщик</th>
+			<th>Сумма</th>
+			<th>Комментарий</th>
+			
+		</tr>
+		<tr ng-repeat="payment in paymentsListCtrl.payments">
+			<td ng-bind="payment.pmtdate"></td>
+			<td ng-bind="payment.pname"></td>
+			<td ng-bind="payment.pmtsumm"></td>
+			<td ng-bind="payment.pmtcomm"></td>						
+		</tr>
+	</table>
+</div>

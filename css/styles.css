@@ -1,0 +1,109 @@
+*{margin:0; padding:0; font-size:100%; outline:0; border-collapse:collapse;}
+
+/*для устаревших браузеров*/
+header,footer,nav,article,section{display:block;}
+html{height:100%;}
+body{height:100%; font-family: "Trebuchet MS", sans-serif;}
+img{border:0;}
+ul{list-style:none;}
+input, button{font-family: "Trebuchet MS", sans-serif;}
+
+input[type="checkbox"] {position: absolute; left: -9999px;}
+input[type="checkbox"] + label {background: url(../img/sprites.png) 0 0 no-repeat; display: inline-block; width: 12px; height: 12px;}	
+input[type="checkbox"]:checked + label {background-position: 0 -14px;}
+
+.clearfix:after {content:"."; clear:both; display:block; height:0; font-size:0; visibility:hidden}
+.flt-left{float: left;}
+.flt-right{float: right;}
+
+.ftxt-fld{border: 1px solid #babbbd; border-radius: 5px; box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.4) inset; font-size: 14px; padding: 4px;}
+.fbtn-fld{border:1px solid #babbbd; border-radius:5px; padding:3px 9px; font-size:14px; color:#656762;
+	background:#e7e8ec;
+	background: -moz-linear-gradient(bottom, #f0f1f3 0%, #dcdde1 100%);
+	background: -webkit-linear-gradient(bottom, #f0f1f3 0%, #dcdde1 100%);
+	background: -o-linear-gradient(bottom, #f0f1f3 0%, #dcdde1 100%);
+	background: -ms-linear-gradient(bottom, #f0f1f3 0%, #dcdde1 100%);
+	background: linear-gradient(to bottom, #f0f1f3 0%, #dcdde1 100%);
+}
+
+.wrap{width:1000px; margin:0 auto; min-height:100%; background:#edeae5;}
+.top-head{
+	background:#e7e8ec;
+	background: -moz-linear-gradient(bottom, #f3f4f6 0%, #dcdde2 100%);
+	background: -webkit-linear-gradient(bottom, #f3f4f6 0%, #dcdde2 100%);
+	background: -o-linear-gradient(bottom, #f3f4f6 0%, #dcdde2 100%);
+	background: -ms-linear-gradient(bottom, #f3f4f6 0%, #dcdde2 100%);
+	background: linear-gradient(to bottom, #f3f4f6 0%, #dcdde2 100%);	
+	border-bottom:1px solid #cacbd0;
+	padding:15px 30px;
+}
+.top-menu{margin-left:-23px;}
+.top-menu li{display: inline; width:70%; margin-left:23px;}
+.top-menu a{color:#336ca3; font-size:14px;}
+.top-menu a:hover, .ent-ext:hover{text-decoration:none;}
+.top-menu a.active-lnk{color:#000; text-decoration: none; cursor: default;}
+.top-menu span {color:#000; font-size:14px;}
+
+.auth-info{width:30%; text-align: right; font-size:14px;}
+.ent-ext{color:#79756c; margin-left:12px;}
+.frm-inner{margin: 0 30px 0 35px;}
+.glyphicon{display: inline-block; width:12px; height:12px; background: url(../img/sprites.png) no-repeat 0 -26px; margin-right:5px;}
+.p-create{width:68%; /*padding-left:10px;*/ padding-top: 3px;}
+.b-create{/*margin-left:15px;*/ text-decoration: none;}
+.p-search{width:30%; text-align:right;}
+
+.srch-fld{width:170px;}
+
+.frm-inner form {margin-top:10px;}
+.frm-inner form div{float: left; margin-right:10px;}
+
+.frm-top{
+	background:#e7e8ec;
+	background: -moz-linear-gradient(bottom, #dcdde2 0%, #dbdbe3 100%);
+	background: -webkit-linear-gradient(bottom, #dcdde2 0%, #dbdbe3 100%);
+	background: -o-linear-gradient(bottom, #dcdde2 0%, #dbdbe3 100%);
+	background: -ms-linear-gradient(bottom, #dcdde2 0%, #dbdbe3 100%);
+	background: linear-gradient(to bottom, #dcdde2 0%, #dbdbe3 100%);	
+	border-bottom:1px solid #cccbd1;
+	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.4);
+	padding:15px 0;
+}
+.frm-content{padding-bottom: 20px;}
+.payer-data{width:93%; margin:0 30px 20px 35px;}
+.payer-data td, .payer-data th{border-bottom:1px solid #bcbbb9; font-size:14px; padding: 16px 10px;}
+.payer-data th{color:#aa9793; font-weight:normal; font-size:13px; text-align: left;}
+.foot-block{margin-bottom:20px;}
+.p-id{}
+.p-fio{}
+.p-email{}
+.p-phone{}
+.p-groups{color:#aa9793;}
+
+/*форма логин и форма редактирование*/
+.loginfrm-wrap, .editfrm-wrap{
+	border: 1px solid #8e8e8e;
+	background: #ddd3c3;
+	width:306px;	
+	font-size:14px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin: -100px 0 0 -153px;	
+}
+.errors-block{
+	color: #f00;
+	font-size: 13px;
+	padding-top: 5px;
+}
+.frm-wrap-inner, .editfrm-wrap-inner{margin: 10px;}
+.loginfrm div, .editfrm div {margin-bottom: 10px;}
+.sbm-block{text-align: center;}
+.fld-block input{width: 200px; padding: 3px;}
+.fld-block select{width:210px;}
+.sbm-block input{padding: 3px;}
+.loginfrm label, .editfrm label{display: inline-block; width: 60px;}
+
+.editlnk{color:#336ca3; text-decoration: none; font-size: 12px; background:url(../img/sprites.png) no-repeat 0 -50px; padding-left:15px;}
+.user-name{font-weight: bold;}
+
+

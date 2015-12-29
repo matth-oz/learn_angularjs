@@ -1,0 +1,40 @@
+<div class="editfrm-wrap" ng-controller="EditPayerController as editPayerController">
+	<div class="errors-block"
+		ng-bind="editPayerController.errorMessage"
+		ng-show="editPayerController.errorMessasge"></div>
+	<div class="editfrm-wrap-inner">
+		<form name="editForm" class="editfrm"
+			ng-submit="editPayerController.savePayerInfo(editPayerController.payer)"
+			role="form">
+			<input type="hidden" ng-model="editPayerController.payer.id"/>
+			<div class="fld-block">
+				<label for="name">ФИО</label>
+				<input type="text" 
+						id="name" 
+						ng-model="editPayerController.payer.name"
+						required="" />
+			</div>
+			<div class="fld-block">
+				<label for="email">E-mail</label>
+				<input type="text" 
+						id="email"
+						ng-model="editPayerController.payer.email" />
+			</div>
+			<div class="fld-block">
+				<label for="">Телефон</label>
+				<input type="text" 
+						id="phone"
+						ng-model="editPayerController.payer.phone" />
+			</div>
+			<div class="fld-block">
+				<label for="groups">Группы</label>
+				<select multiple ng-model="editPayerController.payer.curgroups" ng-options="g.id as g.gname for g in editPayerController.payer.groups"></select>
+			</div>
+			<div class="sbm-block">
+				<input type="submit" 
+						value="Сохранить" 
+						ng-disabled="editForm.$invalid" />
+			</div>
+		</form>
+	</div>		
+</div>

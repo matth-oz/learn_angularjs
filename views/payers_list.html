@@ -1,0 +1,54 @@
+<div class="frm-top">
+	<div class="frm-inner clearfix">
+		<div class="flt-left p-create">								
+			<button class="j-popup b-create fbtn-fld" ng-show="payersListCtrl.userService.isLoggedIn" ng-click="payersListCtrl.showNpfrm()"><span class="glyphicon"></span>Создать плательщика</button>
+		</div>							
+	</div>
+	<div class="frm-inner clearfix" ng-show="payersListCtrl.npfrmIsShown">
+		<div class="errors-block" 
+			ng-bind="payersListCtrl.errorMessage" 
+			ng-show="payersListCtrl.errorMessage"></div> 
+		<form ng-submit="payersListCtrl.addNewPayer(payersListCtrl.payer)" role="form" name="newPayerForm" class="clearfix">
+			<div>			
+				<input type="text" name="p-name"  class="ftxt-fld" placeholder="Плательщик" ng-model="payersListCtrl.payer.name" required="" />
+			</div>
+			<div>
+				<input type="email" name="p-email" class="ftxt-fld" placeholder="E-mail" ng-model="payersListCtrl.payer.email" required="" />
+			</div>
+			<div>
+				<input type="text" name="p-phone" class="ftxt-fld" placeholder="Телефон" ng-model="payersListCtrl.payer.phone" required="" />				
+			</div>
+			<div>
+				<input type="submit" name="p-add" class="fbtn-fld" value="Добавить" ng-disabled="newPayerForm.$invalid" />
+			</div>			
+		</form>
+	</div>	
+</div>
+<div class="frm-top clearfix">
+	<div class="flt-right p-search frm-inner">
+		<input type="text" name="search" class="j-search srch-fld ftxt-fld" placeholder="Фильтр" ng-model="PayersListCtrl.SearchTxt"/>
+	</div> 
+</div>
+<div class="frm-content">
+	<form ng-submit="payersListCtrl.delPayers(payersListCtrl.checkedPayers)" role="form">
+	<table class="payer-data">
+		<tr>
+			<th><input type="checkbox" id="chkAll" ng-click="payersListCtrl.checkAllPayers()" ng-show="payersListCtrl.userService.isLoggedIn" /><label for="chkAll" ng-show="payersListCtrl.userService.isLoggedIn"></label></th>
+			<th>Плательщик</th>
+			<th>Электронная почта</th>
+			<th>Телефон</th>
+			<th>Группы</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="payer in payersListCtrl.payers | filter:PayersListCtrl.SearchTxt">
+			<td><input type="checkbox" ng-click="payersListCtrl.checkPayer(payer.id)" value="{{payer.id}}" id="p-id{{payer.id}}" ng-checked="payersListCtrl.allChecked === true" ng-show="payersListCtrl.userService.isLoggedIn" /><label for="p-id{{payer.id}}" ng-show="payersListCtrl.userService.isLoggedIn"></label></td>
+			<td ng-bind="payer.name"></td>
+			<td ng-bind="payer.email"></td>
+			<td ng-bind="payer.phone"></td>
+			<td ng-bind="payer.groups"></td>			
+			<td><a href="#/detail/{{payer.id}}/" class="editlnk" ng-show="payersListCtrl.userService.isLoggedIn">Изменить</a></td>
+		</tr>
+	</table>
+	<div class="payer-data foot-block"><input class="fbtn-fld" type="submit" value="Удалить" ng-show="payersListCtrl.userService.isLoggedIn" /></div>
+	</form>
+</div>

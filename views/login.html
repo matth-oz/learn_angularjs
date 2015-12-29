@@ -1,0 +1,32 @@
+<div class="loginfrm-wrap" ng-controller="LoginCtrl as loginCtrl">
+	<div class="errors-block"
+		ng-bind="loginCtrl.errorMessage"
+		ng-show="loginCtrl.errorMessage"></div>
+	<div class="frm-wrap-inner">
+			<form name="loginForm" class="loginfrm"
+				ng-submit="loginCtrl.login()"
+				role="form">
+				<div class="fld-block">
+					<label for="login">Логин:</label>
+					<input type="text" 
+							ng-model="loginCtrl.user.username"
+							id="login" 
+							placeholder="Введите логин"
+							required="" />
+				</div>
+				<div class="fld-block"> 
+					<label for="password">Пароль:</label>
+					<input type="password" 
+							ng-model="loginCtrl.user.password"
+							id="password"
+							placeholder="Введите пароль"
+							required="" />
+				</div>
+				<div class="sbm-block">
+					<input type="submit" 
+							value="Войти" 
+							ng-disabled="loginForm.$invalid" />
+				</div>
+			</form>	
+	</div>		
+</div>

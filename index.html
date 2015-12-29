@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+	<head>
+	<meta charset="utf-8" />
+	<title>Плательщики</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" type="text/css" href="/css/styles.css" media="all" />
+
+	<script src="/script/jquery-1.9.1.min.js"></script>
+
+	 <!--[if lt IE 9]>
+      <script src="script/html5.js"></script>
+	 <![endif]-->	
+	</head>
+	<body ng-app="bussApp">
+		<div class="wrap">		
+			<div ng-controller="MainCtrl as mainCtrl">
+				<div class="top-head clearfix">
+					<ul class="top-menu flt-left">
+						<!--li><span class="active-lnk">Плательщики</span></li-->
+						<li ng-repeat="item in mainCtrl.menu" ng-if="item.show" title={{item.show}}>
+							<a href="#{{item.href}}" class="j-item" chclass>{{item.name}}</a>							
+						</li>
+						<!--li><a href="#" class="j-item" data-actname="arch_payments">Архив платежей</a></li>
+						<li><a href="#" class="j-item" data-actname="providers">Поставщики услуг</a></li>
+						<li><a href="#" class="j-item" data-actname="payers">Плательщики</a></li>
+						<li><span class="active-lnk">Плательщики</span></li-->
+					</ul>
+					<div class="auth-info flt-right" ng-hide="mainCtrl.userService.isLoggedIn">
+						<a href="#/login" class="ent-ext">Войти</a>
+					</div>
+					<div class="auth-info flt-right" ng-show="mainCtrl.userService.isLoggedIn">
+						<span>Пользователь: </span>
+						<span class="user-name" ng-bind="mainCtrl.userService.userName"></span>
+						<a href="#" class="ent-ext" ng-click="mainCtrl.logout()">Выход</a>
+					</div>
+				</div>										
+			</div>			
+			<div ng-view></div>	
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+		<script src="/script/app.js"></script>
+		<script src="/script/services.js"></script>
+		<script src="/script/controllers.js"></script>		
+	</body>
+</html>
